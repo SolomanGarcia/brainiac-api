@@ -1,0 +1,24 @@
+{
+  "name": "brainiac-api",
+  "version": "1.0.0",
+  "description": "Brainiac api",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SolomanGarcia/brainiac-api.git"
+  },
+  "author": "Soloman Garcia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SolomanGarcia/brainiac-api/issues"
+  },
+  "homepage": "https://github.com/SolomanGarcia/brainiac-api#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6"
+  }
+}
