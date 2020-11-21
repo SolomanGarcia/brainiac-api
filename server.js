@@ -43,8 +43,8 @@ app.post("/signin", (req, res) => {
 
 app.post("/guest", (req, res) => {
   if (
-    req.body.email === database.users[0].email &&
-    req.body.password === database.users[0].password
+    req.body.email === database.users[1].email &&
+    req.body.password === database.users[1].password
   ) {
     res.json("success");
   } else {
@@ -63,6 +63,20 @@ app.post("/register", (req, res) => {
     joined: new Date()
   });
   req.json(database.users[database.users.length - 1]);
+});
+
+app.get("/profile/:id", (req, res) => {
+  const { id } = req.params;
+  let found = false;
+  database.users.forEach((users) => {
+    if (users.id === id) {
+      found = true;
+      return res.json(user);
+    }
+  });
+  if (!found) {
+    res.status(400).json("not found");
+  }
 });
 
 app.listen(3000, () => {
