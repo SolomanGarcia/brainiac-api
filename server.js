@@ -64,7 +64,7 @@ app.post("/register", (req, res) => {
     entries: 0,
     joined: new Date()
   });
-  req.json(database.users[database.users.length - 1]);
+  res.json(database.users[database.users.length - 1]);
 });
 
 app.get("/profile/:id", (req, res) => {
@@ -84,8 +84,8 @@ app.get("/profile/:id", (req, res) => {
 app.put("/image", (req, res) => {
   const { id } = req.body;
   let found = false;
-  database.users.forEach((users) => {
-    if (users.id === id) {
+  database.users.forEach((user) => {
+    if (user.id === id) {
       found = true;
       user.entries++;
       return res.json(user.entries);
